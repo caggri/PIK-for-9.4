@@ -1,0 +1,26 @@
+package:
+  - name: nfs-utils.x86_64
+  - name: firefox
+  - name: compat-libstdc++-33
+  - name: libuuid
+  - name: libSM
+  - name: libXrender
+  - name: fontconfig
+  - name: libstdc++
+  - name: zlib
+  - name: apr
+  - name: ksh
+  - name: perl
+  - name: numactl
+  - name: glibc
+  - name: python
+  - name: libXext
+  - name: libXp
+  - name: libXtst
+  - name: xorg-x11-xauth
+  - name: at
+  - name: libpng
+  - name: ntp
+
+
+  

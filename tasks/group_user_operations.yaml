@@ -1,0 +1,20 @@
+- name: Ensure Necessary Groups are Created
+  group:
+    name: '{{ item.name }}'
+    gid: '{{ item.gid }}'
+    state: present
+  loop: '{{ group }}'
+  tags: useroperations
+- name: Include password
+  include_vars: ../vars/password
+  tags: useroperations
+- name: Ensure Necessary Users are Created wit UID and Added to the Group
+  user:
+    name: '{{ item.username }}'
+    uid: '{{ item.uid }}'
+    groups: '{{ item.group }}'
+    password: '{{ pw | password_hash(''sha512'')}}'
+    state: present
+  loop: '{{ user }}'
+  tags: useroperations
+  

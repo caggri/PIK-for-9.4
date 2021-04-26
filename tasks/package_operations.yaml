@@ -1,0 +1,30 @@
+- name: Update All Packages
+  yum:
+    name: '*'
+    state: latest
+  tags: [ packageoperations, update ]
+
+
+- name: Include RHEL7 Packages
+  include_vars: ./vars/packages7
+  when:  ansible_distribution_major_version == "7"
+  tags: packageoperations
+
+- name: Include RHEL8 Packages
+  include_vars: ../vars/packages8
+  when: ansible_distribution_major_version == "8"
+  tags: packageoperations
+
+- name: Ensure Necessary Packages Installed
+  yum:
+    name: "{{ item.name }}"
+    state: latest
+    update_cache: true
+  loop: "{{ package }}"
+  tags: packageoperations
+- name: Start Service at, If Not Started
+  service:
+    name: atd
+    enabled: yes
+    state: started
+  tags: packageoperations

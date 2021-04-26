@@ -1,0 +1,31 @@
+directory:
+  - path: /sas/sasdepot
+    owner: sas
+    group: sas
+    recurse: yes
+    mode: '755'
+  - path: /sas/config
+    owner: sas
+    group: sas
+    recurse: yes
+    mode: '755'
+  - path: /sas/sashome
+    owner: sas
+    group: sas
+    recurse: yes
+    mode: '755'
+  - path: /sas/thirdparty
+    owner: sas
+    group: sas
+    recurse: yes
+    mode: '755'
+  - path: /sas/saswork
+    owner: sas
+    group: sas
+    recurse: yes
+    mode: '777'
+  - path: /etc/opt/vmware/vfabric
+    owner: sas
+    group: sas
+    recurse: yes
+    mode: '755'

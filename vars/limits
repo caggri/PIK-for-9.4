@@ -1,0 +1,19 @@
+limit:
+  - type: hard
+    item: nofile
+    value: 350000
+  - type: soft
+    item: nofile
+    value: 350000
+  - type: hard
+    item: nproc
+    value: 100000
+  - type: soft
+    item: nproc
+    value: 100000
+  - type: hard
+    item: stack
+    value: 10240 
+  - type: soft
+    item: stack
+    value: 10240 

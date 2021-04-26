@@ -1,0 +1,22 @@
+---
+- name: Pre Installation Tasks
+  hosts: all
+  vars:
+    cpu_core: '8' # You can change minimum CPU core requirement from here
+    memory: '65536' # You can change minimum Memory requirement from here as MB
+  vars_files:
+  - vars/groups
+  - vars/users
+  - vars/directories
+  - vars/limits
+  tasks:
+  - name: Include System Check Play
+    include: tasks/system_check.yaml
+  - name: Group and User Operations
+    include: tasks/group_user_operations.yaml 
+  - name: Directory Operations
+    include: tasks/directory_operations.yaml 
+  - name: Package and Operations
+    include: tasks/package_operations.yaml 
+  - name: Limit Operations
+    include: tasks/limit_operations.yaml 

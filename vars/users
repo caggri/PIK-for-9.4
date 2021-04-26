@@ -1,0 +1,14 @@
+user:
+  - username: sas
+    uid: 502
+    group: sas #if you want to add to more groups you can add them by comma
+  - username: sasdemo
+    uid: 503
+    group: sasusers 
+  - username: sassrv
+    uid: 504
+    group: sas 
+  - username: lasradm
+    uid: 506
+    group: sasusers 
+

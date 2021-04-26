@@ -1,0 +1,17 @@
+- name: Check Memory
+  fail: msg="Not Enough Memory"
+  when:
+    - 'ansible_memtotal_mb < {{ memory }}'
+- name: Check CPU
+  fail: msg="Not enough CPU Cores"
+  when:
+    - 'ansible_processor_cores < {{ cpu_core }}'
+- name: Check OS
+  fail: msg="Not enough CPU Cores"
+  when:
+    - ansible_os_family != "RedHat"
+- name: Check OS Major Version
+  fail: msg="Only RedHat 7.X and 8.X is supported"
+  when:
+    - ansible_distribution_major_version != "7"
+    - ansible_distribution_major_version != "8"

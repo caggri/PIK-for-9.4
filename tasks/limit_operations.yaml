@@ -1,0 +1,8 @@
+- name: Ensure Necessary Limits are Set
+  pam_limits:
+    domain: '*'
+    limit_type: "{{ item.type }}"
+    limit_item: "{{ item.item }}"
+    value: "{{ item.value }}"
+  loop: "{{ limit }}"
+  tags: limitoperations
